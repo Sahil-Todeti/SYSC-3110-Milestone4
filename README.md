@@ -15,13 +15,13 @@ Ashfaqul Alam - 101195158
 Uday Arya: Implemented README, WordTest, TileBag, ScrabbleGame, Main <br><br>
 Chukwuemeka Igwe: Implemented Tile Class, UML <br><br>
 Sahil Todeti: Implemented Player class, UML <br><br>
-Ashfaqul Alam: Implemented README, Board Class, UML_
+Ashfaqul Alam: Implemented README, Board Class, UML
 
 ### Milestone 2:
 Uday Arya: Implemented README, debugged code <br><br>
 Chukwuemeka Igwe: Implemented README, Test Cases, Sequence Diagram <br><br>
 Sahil Todeti: Implemented View for GUI. <br><br>
-Ashfaqul Alam: Implemented Controller and Model for GUI, UML._
+Ashfaqul Alam: Implemented Controller and Model for GUI, UML.
 
 ### Milestone 3: 
 Uday Arya: Implemented README, Testing, <br><br>
