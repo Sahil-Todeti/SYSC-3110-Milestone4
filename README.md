@@ -9,8 +9,8 @@ Chukwuemeka Igwe - 101219454
 Sahil Todeti - 101259541
 Ashfaqul Alam - 101195158
 
-Milestones
-Milestone 1:
+**Milestones**
+**Milestone 1:**
 Uday Arya: Implemented README, WordTest, TileBag, ScrabbleGame, Main
 
 Chukwuemeka Igwe: Implemented Tile Class, UML
@@ -19,7 +19,8 @@ Sahil Todeti: Implemented Player class, UML
 
 Ashfaqul Alam: Implemented README, Board Class, UML
 
-Milestone 2:
+
+**Milestone 2:**
 Uday Arya: Implemented README, debugged code
 
 Chukwuemeka Igwe: Implemented README, Test Cases, Sequence Diagram
@@ -28,7 +29,8 @@ Sahil Todeti: Implemented View for GUI.
 
 Ashfaqul Alam: Implemented Controller and Model for GUI, UML.
 
-Milestone 3:
+
+**Milestone 3:**
 _Uday Arya: Implemented README, Testing,
 
 Chukwuemeka Igwe: Implemented Sequence diagram, UML modeling,
@@ -37,7 +39,8 @@ Sahil Todeti: Implemented Model for MVC, and Documentation,
 
 Ashfaqul Alam: Implemented MVC
 
-Milestone 4:
+
+**Milestone 4:**
 _Uday Arya:
 
 Chukwuemeka Igwe:
@@ -46,7 +49,7 @@ Sahil Todeti:
 
 Ashfaqul Alam:
 
-Milestone 5 (Bonus): Feature 3 – Game Statistics Display
+**Milestone 5 (Bonus): Feature 3 – Game Statistics Display**
 - Selected Feature: Game Statistics Display (Feature 3),
 - Gameplay: At the end of the game, a statistics dialog automatically appears showing:
     - Number of turns taken by each player,
