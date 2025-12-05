@@ -36,21 +36,21 @@ Sahil Todeti: <br><br>
 Ashfaqul Alam: <br><br>
 
 ### Milestone 5 (Bonus): Feature 3 – Game Statistics Display
-- Selected Feature: Game Statistics Display (Feature 3) <br><br>
-- Gameplay: At the end of the game, a statistics dialog automatically appears showing: <br><br>
-    - Number of turns taken by each player, <br><br>
-    - Total points scored by each player, <br><br>
-    - Words played by each player along with their individual scores, <br><br>
-- Implementation: <br><br>
-    - Tracking statistics per player added in src/scrabble/model/Player.java (turn count and per-word scores), <br><br>
-    - Stats recorded in src/scrabble/model/ScrabbleModel.java: <br><br>
-       - On word placement, the word and its score are stored and the turn count increments, <br><br>
-       - On tile exchange and pass, the turn count increments, <br><br>
-    - End-of-game UI in src/scrabble/view/GameStatsDialog.java: <br><br>
-       - Summary table for Player, Turns, and Total Points, <br><br>
-       - Tabbed view listing words and scores per player, <br><br>
-    - Hooked into game flow in src/scrabble/view/ScrabbleView.java: <br><br>
-       - When a GAME_ENDED event is received, the Game Statistics dialog is displayed, <br><br>
-- Contributors: <br><br>
-  - Chukwuemeka Igwe: View hook on game end and UI polish, <br><br>
-  - Sahil Todeti: Player model extensions for stats (turns, words, scores) <br><br>
+- Selected Feature: Game Statistics Display (Feature 3),
+- Gameplay: At the end of the game, a statistics dialog automatically appears showing: 
+    - Number of turns taken by each player, 
+    - Total points scored by each player, 
+    - Words played by each player along with their individual scores, 
+- Implementation: 
+    - Tracking statistics per player added in src/scrabble/model/Player.java (turn count and per-word scores),
+    - Stats recorded in src/scrabble/model/ScrabbleModel.java: 
+       - On word placement, the word and its score are stored and the turn count increments,
+       - On tile exchange and pass, the turn count increments, 
+    - End-of-game UI in src/scrabble/view/GameStatsDialog.java: 
+       - Summary table for Player, Turns, and Total Points, 
+       - Tabbed view listing words and scores per player, 
+    - Hooked into game flow in src/scrabble/view/ScrabbleView.java:
+       - When a GAME_ENDED event is received, the Game Statistics dialog is displayed, 
+- Contributors: 
+  - Chukwuemeka Igwe: View hook on game end and UI polish, 
+  - Sahil Todeti: Player model extensions for stats (turns, words, scores) 
