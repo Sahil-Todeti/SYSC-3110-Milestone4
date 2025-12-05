@@ -12,25 +12,25 @@ Ashfaqul Alam - 101195158
 
 ## Milestones
 ### Milestone 1:
-_Uday Arya: Implemented README, WordTest, TileBag, ScrabbleGame, Main <br><br>
+Uday Arya: Implemented README, WordTest, TileBag, ScrabbleGame, Main <br><br>
 Chukwuemeka Igwe: Implemented Tile Class, UML <br><br>
 Sahil Todeti: Implemented Player class, UML <br><br>
 Ashfaqul Alam: Implemented README, Board Class, UML_
 
 ### Milestone 2:
-_Uday Arya: Implemented README, debugged code <br><br>
+Uday Arya: Implemented README, debugged code <br><br>
 Chukwuemeka Igwe: Implemented README, Test Cases, Sequence Diagram <br><br>
 Sahil Todeti: Implemented View for GUI. <br><br>
 Ashfaqul Alam: Implemented Controller and Model for GUI, UML._
 
 ### Milestone 3: 
-_Uday Arya: Implemented README, Testing, <br><br>
+Uday Arya: Implemented README, Testing, <br><br>
 Chukwuemeka Igwe: Implemented Sequence diagram, UML modeling, <br><br>
 Sahil Todeti: Implemented Model for MVC, and Documentation, <br><br>
 Ashfaqul Alam: Implemented MVC 
 
 ### Milestone 4:
-_Uday Arya: <br><br>
+Uday Arya: <br><br>
 Chukwuemeka Igwe: <br><br>
 Sahil Todeti: <br><br>
 Ashfaqul Alam: <br><br>
