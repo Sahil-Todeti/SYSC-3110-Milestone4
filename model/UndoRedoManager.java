@@ -25,11 +25,11 @@ public class UndoRedoManager {
     public void saveState(GameState state) {
         if (state == null) return;
         
-            undoStack.push(state);
-            redoStack.clear();
-            
-            if (undoStack.size() > MAX_HISTORY) {
-                undoStack.removeLast();
+        undoStack.push(state);
+        redoStack.clear();
+
+        if (undoStack.size() > MAX_HISTORY) {
+            undoStack.removeLast();
         }
     }
     
