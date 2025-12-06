@@ -31,7 +31,7 @@ Ashfaqul Alam: Implemented MVC
 
 ### Milestone 4:
 Uday Arya: Implemented some methods in multiple model classes, Configured Tests, Documentation, <br><br>
-Chukwuemeka Igwe: <br><br>
+Chukwuemeka Igwe: Implemented Diagrams (UML and Serialization), Implemented User Manual, <br><br>
 Sahil Todeti: Implemented README, Implemented Undo/Redo, <br><br>
 Ashfaqul Alam: Implemented Board Functionality, Implemented Serialization/Deserialization <br><br>
 
