@@ -30,7 +30,7 @@ Sahil Todeti: Implemented Model for MVC, and Documentation, <br><br>
 Ashfaqul Alam: Implemented MVC 
 
 ### Milestone 4:
-Uday Arya: <br><br>
+Uday Arya: Implemented some methods in multiple model classes, configured tests, documentation<br><br>
 Chukwuemeka Igwe: <br><br>
 Sahil Todeti: <br><br>
 Ashfaqul Alam: <br><br>
