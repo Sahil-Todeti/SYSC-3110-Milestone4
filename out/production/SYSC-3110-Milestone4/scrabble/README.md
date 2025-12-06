@@ -30,10 +30,10 @@ Sahil Todeti: Implemented Model for MVC, and Documentation, <br><br>
 Ashfaqul Alam: Implemented MVC 
 
 ### Milestone 4:
-Uday Arya: <br><br>
-Chukwuemeka Igwe: <br><br>
-Sahil Todeti: <br><br>
-Ashfaqul Alam: <br><br>
+Uday Arya: Implemented some methods in multiple model classes, Configured Tests, Documentation, <br><br>
+Chukwuemeka Igwe: Implemented Diagrams (UML and Sequence), Implemented User Manual, <br><br>
+Sahil Todeti: Implemented README, Implemented Undo/Redo, <br><br>
+Ashfaqul Alam: Implemented Board Functionality, Implemented Serialization/Deserialization <br><br>
 
 ### Milestone 5 (Bonus): Feature 3 – Game Statistics Display
 - Selected Feature: Game Statistics Display (Feature 3),
