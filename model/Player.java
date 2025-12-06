@@ -177,4 +177,8 @@ public class Player implements Serializable {
     public String toString() {
         return name + " - Score: " + score;
     }
+
+    public int getRackSize() {
+        return this.rack.size();
+    }
 }

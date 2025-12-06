@@ -74,4 +74,8 @@ public class Tile implements Serializable {
     public int hashCode() {
         return (letter + "" + blank).hashCode();
     }
+
+    public String toSimpleString() {
+        return String.valueOf(letter);
+    }
 }
