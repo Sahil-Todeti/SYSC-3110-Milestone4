@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Represents a player in the Scrabble game.
  * Manages player rack, score, and tile operations.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -18,48 +18,102 @@ public class Player implements Serializable {
     private String name;
     private int score;
     private List<Character> rack;
-    
+
+    /**
+     * Instantiates a new Player.
+     *
+     * @param name the name
+     */
     public Player(String name) {
         this.name = name;
         this.score = 0;
         this.rack = new ArrayList<>();
     }
-    
+
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() { return name; }
+
+    /**
+     * Gets score.
+     *
+     * @return the score
+     */
     public int getScore() { return score; }
-    
+
+    /**
+     * Add score.
+     *
+     * @param points the points
+     */
     public void addScore(int points) {
         this.score += points;
     }
-    
+
+    /**
+     * Sets score.
+     *
+     * @param newScore the new score
+     */
     public void setScore(int newScore) {
         this.score = newScore;
     }
-    
+
+    /**
+     * Reset score.
+     */
     public void resetScore() {
         this.score = 0;
     }
-    
+
+    /**
+     * Gets rack.
+     *
+     * @return the rack
+     */
     public List<Character> getRack() {
         return new ArrayList<>(rack);
     }
-    
+
+    /**
+     * Gets internal rack.
+     *
+     * @return the internal rack
+     */
     protected List<Character> getInternalRack() {
         return rack;
     }
-    
+
+    /**
+     * Add tile.
+     *
+     * @param tile the tile
+     */
     public void addTile(Character tile) {
         if (tile != null) {
             rack.add(tile);
         }
     }
-    
+
+    /**
+     * Add tiles.
+     *
+     * @param tiles the tiles
+     */
     public void addTiles(List<Character> tiles) {
         if (tiles != null) {
             rack.addAll(tiles);
         }
     }
-    
+
+    /**
+     * Sets tiles.
+     *
+     * @param newRack the new rack
+     */
     public void setTiles(List<Character> newRack) {
         if (newRack == null) {
             this.rack = new ArrayList<>();
@@ -67,13 +121,21 @@ public class Player implements Serializable {
             this.rack = new ArrayList<>(newRack);
         }
     }
-    
+
+    /**
+     * Clear rack.
+     */
     public void clearRack() {
         if (this.rack != null) {
             this.rack.clear();
         }
     }
-    
+
+    /**
+     * Gets rack display.
+     *
+     * @return the rack display
+     */
     public String getRackDisplay() {
         StringBuilder sb = new StringBuilder();
         for (Character c : rack) {
@@ -81,7 +143,12 @@ public class Player implements Serializable {
         }
         return sb.toString().trim();
     }
-    
+
+    /**
+     * Fill rack.
+     *
+     * @param bag the bag
+     */
     public void fillRack(TileBag bag) {
         while (rack.size() < 7 && !bag.isEmpty()) {
             Character tile = bag.drawTile();
@@ -90,13 +157,25 @@ public class Player implements Serializable {
             }
         }
     }
-    
+
+    /**
+     * Refill rack.
+     *
+     * @param bag the bag
+     */
     public void refillRack(TileBag bag) {
         fillRack(bag);
     }
-    
+
     /**
      * Checks if player has required letters for a word.
+     *
+     * @param word       the word
+     * @param board      the board
+     * @param row        the row
+     * @param col        the col
+     * @param horizontal the horizontal
+     * @return the boolean
      */
     public boolean hasLetters(String word, Board board, int row, int col, boolean horizontal) {
         List<Character> needed = new ArrayList<>();
@@ -128,9 +207,16 @@ public class Player implements Serializable {
         
         return true;
     }
-    
+
     /**
      * Removes letters from rack after placement.
+     *
+     * @param word       the word
+     * @param board      the board
+     * @param row        the row
+     * @param col        the col
+     * @param horizontal the horizontal
+     * @return the boolean
      */
     public boolean removeLetters(String word, Board board, int row, int col, boolean horizontal) {
         List<Character> toRemove = new ArrayList<>();
@@ -159,7 +245,13 @@ public class Player implements Serializable {
         
         return true;
     }
-    
+
+    /**
+     * Exchange tiles.
+     *
+     * @param toExchange the to exchange
+     * @param bag        the bag
+     */
     public void exchangeTiles(List<Character> toExchange, TileBag bag) {
         for (Character tile : toExchange) {
             if (rack.remove(tile)) {
@@ -168,7 +260,12 @@ public class Player implements Serializable {
         }
         fillRack(bag);
     }
-    
+
+    /**
+     * Is ai boolean.
+     *
+     * @return the boolean
+     */
     public boolean isAI() {
         return false;
     }
@@ -178,6 +275,11 @@ public class Player implements Serializable {
         return name + " - Score: " + score;
     }
 
+    /**
+     * Gets rack size.
+     *
+     * @return the rack size
+     */
     public int getRackSize() {
         return this.rack.size();
     }

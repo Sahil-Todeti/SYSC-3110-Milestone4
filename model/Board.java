@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Represents the Scrabble game board (15x15).
  * Supports custom board configurations and serialization.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -44,7 +44,10 @@ public class Board implements Serializable {
             applyBoardConfig(config);
         }
     }
-    
+
+    /**
+     * Method to initialize the grid
+     */
     private void initializeGrids() {
         grid = new char[SIZE][SIZE];
         premiumGrid = new PremiumSquare[SIZE][SIZE];
@@ -58,7 +61,12 @@ public class Board implements Serializable {
             }
         }
     }
-    
+
+    /**
+     * Method to initialize the grid configuration based
+     * on player's choice
+     * @param config    config type
+     */
     private void applyBoardConfig(BoardConfig config) {
         for (int r = 0; r < SIZE; r++) {
             for (int c = 0; c < SIZE; c++) {
@@ -130,9 +138,13 @@ public class Board implements Serializable {
             premiumGrid[pos[0]][pos[1]] = PremiumSquare.DOUBLE_LETTER;
         }
     }
-    
+
     /**
      * Gets the character at a position on the board.
+     *
+     * @param row the row
+     * @param col the col
+     * @return the character
      */
     public Character get(int row, int col) {
         if (row < 0 || row >= SIZE || col < 0 || col >= SIZE) {
@@ -141,9 +153,13 @@ public class Board implements Serializable {
         char c = grid[row][col];
         return c == '_' ? null : c;
     }
-    
+
     /**
      * Gets the premium square type at a position.
+     *
+     * @param row the row
+     * @param col the col
+     * @return the premium
      */
     public PremiumSquare getPremium(int row, int col) {
         if (row < 0 || row >= SIZE || col < 0 || col >= SIZE) {
@@ -151,9 +167,13 @@ public class Board implements Serializable {
         }
         return premiumGrid[row][col];
     }
-    
+
     /**
      * Checks if premium square has been used.
+     *
+     * @param row the row
+     * @param col the col
+     * @return the boolean
      */
     public boolean isPremiumUsed(int row, int col) {
         if (row < 0 || row >= SIZE || col < 0 || col >= SIZE) {
@@ -161,13 +181,47 @@ public class Board implements Serializable {
         }
         return usedPremium[row][col];
     }
-    
+
+    /**
+     * Gets board name.
+     *
+     * @return the board name
+     */
     public String getBoardName() { return boardName; }
+
+    /**
+     * method to get size.
+     *
+     * @return size
+     */
     public int getSize() { return SIZE; }
+
+    /**
+     * method to get grid
+     *
+     * @return char
+     */
     public char[][] getGrid() { return grid; }
+
+    /**
+     * Get premium grid premium square.
+     *
+     * @return the premium square
+     */
     public PremiumSquare[][] getPremiumGrid() { return premiumGrid; }
+
+    /**
+     * method to find used premium tiles
+     *
+     * @return boolean
+     */
     public boolean[][] getUsedPremium() { return usedPremium; }
-    
+
+    /**
+     * method to set grid.
+     *
+     * @param newGrid the new grid
+     */
     public void setGrid(char[][] newGrid) {
         if (newGrid != null && newGrid.length == SIZE) {
             boolean validGrid = true;
@@ -182,7 +236,12 @@ public class Board implements Serializable {
             }
         }
     }
-    
+
+    /**
+     * method to set premium grid.
+     *
+     * @param newPremiumGrid the new premium grid
+     */
     public void setPremiumGrid(PremiumSquare[][] newPremiumGrid) {
         if (newPremiumGrid != null && newPremiumGrid.length == SIZE) {
             boolean validGrid = true;
@@ -197,7 +256,12 @@ public class Board implements Serializable {
             }
         }
     }
-    
+
+    /**
+     * Sets used premium.
+     *
+     * @param newUsedPremium the new used premium
+     */
     public void setUsedPremium(boolean[][] newUsedPremium) {
         if (newUsedPremium != null && newUsedPremium.length == SIZE) {
             boolean validArray = true;
@@ -212,19 +276,37 @@ public class Board implements Serializable {
             }
         }
     }
-    
+
+    /**
+     * method to mark premium tiles.
+     *
+     * @param row the row
+     * @param col the col
+     */
     public void markPremiumUsed(int row, int col) {
         if (row >= 0 && row < SIZE && col >= 0 && col < SIZE) {
             usedPremium[row][col] = true;
         }
     }
-    
+
+    /**
+     * Method to place tile.
+     *
+     * @param row    the row
+     * @param col    the col
+     * @param letter the letter
+     */
     public void placeTile(int row, int col, char letter) {
         if (row >= 0 && row < SIZE && col >= 0 && col < SIZE) {
             grid[row][col] = Character.toUpperCase(letter);
         }
     }
-    
+
+    /**
+     * Checks if tile is empty.
+     *
+     * @return the boolean
+     */
     public boolean isEmpty() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -235,7 +317,16 @@ public class Board implements Serializable {
         }
         return true;
     }
-    
+
+    /**
+     * Checks if word fits in grid.
+     *
+     * @param row        the row
+     * @param col        the col
+     * @param horizontal the orientation
+     * @param length     the length
+     * @return the boolean
+     */
     public boolean fits(int row, int col, boolean horizontal, int length) {
         if (horizontal) {
             return col + length <= SIZE;
@@ -243,9 +334,15 @@ public class Board implements Serializable {
             return row + length <= SIZE;
         }
     }
-    
+
     /**
      * Validates word placement.
+     *
+     * @param row        the row
+     * @param col        the col
+     * @param horizontal the orientation
+     * @param word       the word
+     * @return the boolean
      */
     public boolean isValidPlacement(int row, int col, boolean horizontal, String word) {
         if (word == null || word.isEmpty()) {
@@ -293,9 +390,16 @@ public class Board implements Serializable {
         
         return false;
     }
-    
+
     /**
      * Places a word on the board.
+     *
+     * @param row        the row
+     * @param col        the col
+     * @param horizontal the orientation
+     * @param word       the word
+     * @param player     the player
+     * @return List
      */
     public List<Character> placeWord(int row, int col, boolean horizontal, String word, Player player) {
         List<Character> used = new ArrayList<>();
@@ -318,9 +422,15 @@ public class Board implements Serializable {
         
         return used;
     }
-    
+
     /**
      * Calculates score for a placed word.
+     *
+     * @param row        the row
+     * @param col        the col
+     * @param horizontal the orientation
+     * @param word       the word
+     * @return int
      */
     public int calculateScore(int row, int col, boolean horizontal, String word) {
         int score = 0;
@@ -358,7 +468,12 @@ public class Board implements Serializable {
         
         return 0;
     }
-    
+
+    /**
+     * method to copy from other boards
+     *
+     * @param other the other board
+     */
     public void copyFrom(Board other) {
         if (other == null) return;
         
@@ -371,7 +486,10 @@ public class Board implements Serializable {
         }
         this.boardName = other.boardName;
     }
-    
+
+    /**
+     * method to clear tile.
+     */
     public void clear() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {

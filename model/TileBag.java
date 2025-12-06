@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Manages the pool of tiles in Scrabble.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -16,7 +16,10 @@ public class TileBag implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private List<Character> bag;
-    
+
+    /**
+     * Instantiates a new Tile bag.
+     */
     public TileBag() {
         bag = new ArrayList<>();
         initializeTiles();
@@ -57,14 +60,25 @@ public class TileBag implements Serializable {
             bag.add(letter);
         }
     }
-    
+
+    /**
+     * Draw tile character.
+     *
+     * @return the character
+     */
     public Character drawTile() {
         if (bag.isEmpty()) {
             return null;
         }
         return bag.remove(bag.size() - 1);
     }
-    
+
+    /**
+     * Draw tiles list.
+     *
+     * @param total the total
+     * @return the list
+     */
     public List<Character> drawTiles(int total) {
         List<Character> drawn = new ArrayList<>();
         for (int i = 0; i < total && !bag.isEmpty(); i++) {
@@ -72,33 +86,61 @@ public class TileBag implements Serializable {
         }
         return drawn;
     }
-    
+
+    /**
+     * Return tile.
+     *
+     * @param tile the tile
+     */
     public void returnTile(Character tile) {
         if (tile != null) {
             bag.add(tile);
             Collections.shuffle(bag);
         }
     }
-    
+
+    /**
+     * Return tiles.
+     *
+     * @param tiles the tiles
+     */
     public void returnTiles(List<Character> tiles) {
         if (tiles != null && !tiles.isEmpty()) {
             bag.addAll(tiles);
             Collections.shuffle(bag);
         }
     }
-    
+
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
     public boolean isEmpty() {
         return bag.isEmpty();
     }
-    
+
+    /**
+     * Size int.
+     *
+     * @return the int
+     */
     public int size() {
         return bag.size();
     }
-    
+
+    /**
+     * Tiles remaining int.
+     *
+     * @return the int
+     */
     public int tilesRemaining() {
         return bag.size();
     }
-    
+
+    /**
+     * Reset.
+     */
     public void reset() {
         bag.clear();
         initializeTiles();

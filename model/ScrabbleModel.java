@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * Core game controller managing all game logic and state.
  * Implements Serializable for save/load functionality.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -23,10 +23,10 @@ public class ScrabbleModel implements Serializable {
     private int currentPlayerIndex = 0;
     private int consecutivePasses = 0;
     private boolean gameEnded = false;
-    
+
     /**
      * Constructor - Initialize game with board configuration and players.
-     * 
+     *
      * @param boardConfig the board configuration to use
      * @param playerNames list of player names
      */
@@ -48,7 +48,7 @@ public class ScrabbleModel implements Serializable {
         this.dictionary = new Dictionary("dictionary.txt");
         this.currentPlayerIndex = 0;
     }
-    
+
     /**
      * Starts the game by filling all player racks.
      */
@@ -59,7 +59,7 @@ public class ScrabbleModel implements Serializable {
             player.fillRack(tileBag);
         }
     }
-    
+
     /**
      * Resets the game to initial state.
      */
@@ -78,14 +78,14 @@ public class ScrabbleModel implements Serializable {
         this.gameEnded = false;
         this.undoRedoManager.clear();
     }
-    
+
     /**
      * Places a word on the board.
-     * 
-     * @param row starting row
-     * @param col starting column
+     *
+     * @param row        starting row
+     * @param col        starting column
      * @param horizontal true for horizontal, false for vertical
-     * @param word the word to place
+     * @param word       the word to place
      * @return true if placement successful
      */
     public boolean placeWord(int row, int col, boolean horizontal, String word) {
@@ -143,7 +143,7 @@ public class ScrabbleModel implements Serializable {
         GameState state = new GameState(this);
         undoRedoManager.saveState(state);
     }
-    
+
     /**
      * Undoes the last move.
      */
@@ -155,7 +155,7 @@ public class ScrabbleModel implements Serializable {
             restoreState(previousState);
         }
     }
-    
+
     /**
      * Redoes the last undone move.
      */
@@ -167,10 +167,10 @@ public class ScrabbleModel implements Serializable {
             restoreState(nextState);
         }
     }
-    
+
     /**
      * Restores game state from a snapshot.
-     * 
+     *
      * @param state the game state to restore
      */
     public void restoreState(GameState state) {
@@ -199,15 +199,25 @@ public class ScrabbleModel implements Serializable {
         
         this.currentPlayerIndex = state.getCurrentPlayerIndex();
     }
-    
-    public boolean canUndo() { 
+
+    /**
+     * Can undo boolean.
+     *
+     * @return the boolean
+     */
+    public boolean canUndo() {
         return undoRedoManager != null && undoRedoManager.canUndo(); 
     }
-    
-    public boolean canRedo() { 
+
+    /**
+     * Can redo boolean.
+     *
+     * @return the boolean
+     */
+    public boolean canRedo() {
         return undoRedoManager != null && undoRedoManager.canRedo(); 
     }
-    
+
     /**
      * Passes turn to next player.
      */
@@ -218,16 +228,75 @@ public class ScrabbleModel implements Serializable {
             gameEnded = true;
         }
     }
-    
-    // Getters
+
+    /**
+     * Gets board.
+     *
+     * @return the board
+     */
+// Getters
     public Board getBoard() { return board; }
+
+    /**
+     * Gets players.
+     *
+     * @return the players
+     */
     public List<Player> getPlayers() { return players; }
+
+    /**
+     * Gets current player.
+     *
+     * @return the current player
+     */
     public Player getCurrentPlayer() { return players.get(currentPlayerIndex); }
+
+    /**
+     * Gets current player index.
+     *
+     * @return the current player index
+     */
     public int getCurrentPlayerIndex() { return currentPlayerIndex; }
+
+    /**
+     * Gets tile bag.
+     *
+     * @return the tile bag
+     */
     public TileBag getTileBag() { return tileBag; }
+
+    /**
+     * Gets dictionary.
+     *
+     * @return the dictionary
+     */
     public Dictionary getDictionary() { return dictionary; }
+
+    /**
+     * Sets dictionary.
+     *
+     * @param dict the dict
+     */
     public void setDictionary(Dictionary dict) { this.dictionary = dict; }
+
+    /**
+     * Gets consecutive passes.
+     *
+     * @return the consecutive passes
+     */
     public int getConsecutivePasses() { return consecutivePasses; }
+
+    /**
+     * Is game ended boolean.
+     *
+     * @return the boolean
+     */
     public boolean isGameEnded() { return gameEnded; }
+
+    /**
+     * Gets board name.
+     *
+     * @return the board name
+     */
     public String getBoardName() { return board != null ? board.getBoardName() : "Unknown"; }
 }

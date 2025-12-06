@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Represents a board configuration for Scrabble.
  * Supports custom board types (Standard, Diamond, Cross).
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -18,13 +18,24 @@ public class BoardConfig {
     private List<int[]> doubleWordPositions;
     private List<int[]> tripleLetterPositions;
     private List<int[]> doubleLetterPositions;
-    
+
+    /**
+     * Instantiates a new Board config.
+     *
+     * @param name the name
+     */
     public BoardConfig(String name) {
         this.name = name != null ? name : "Standard";
         this.size = 15;
         initializePremiums();
     }
-    
+
+    /**
+     * Instantiates a new Board config.
+     *
+     * @param name the name
+     * @param size the size
+     */
     public BoardConfig(String name, int size) {
         this.name = name != null ? name : "Standard";
         this.size = size > 0 ? size : 15;
@@ -149,14 +160,54 @@ public class BoardConfig {
         doubleLetterPositions.add(new int[]{7, 9});
         doubleLetterPositions.add(new int[]{9, 7});
     }
-    
+
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() { return name; }
+
+    /**
+     * Gets size.
+     *
+     * @return the size
+     */
     public int getSize() { return size; }
+
+    /**
+     * Gets triple word positions.
+     *
+     * @return the triple word positions
+     */
     public List<int[]> getTripleWordPositions() { return tripleWordPositions; }
+
+    /**
+     * Gets double word positions.
+     *
+     * @return the double word positions
+     */
     public List<int[]> getDoubleWordPositions() { return doubleWordPositions; }
+
+    /**
+     * Gets triple letter positions.
+     *
+     * @return the triple letter positions
+     */
     public List<int[]> getTripleLetterPositions() { return tripleLetterPositions; }
+
+    /**
+     * Gets double letter positions.
+     *
+     * @return the double letter positions
+     */
     public List<int[]> getDoubleLetterPositions() { return doubleLetterPositions; }
-    
+
+    /**
+     * Gets all boards.
+     *
+     * @return the all boards
+     */
     public static List<BoardConfig> getAllBoards() {
         List<BoardConfig> boards = new ArrayList<>();
         boards.add(new BoardConfig("Standard", 15));

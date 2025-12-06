@@ -5,7 +5,7 @@ import java.util.*;
 
 /**
  * Captures complete game state for undo/redo functionality.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -18,7 +18,12 @@ public class GameState implements Serializable {
     private final int currentPlayerIndex;
     private final int consecutivePasses;
     private final long timestamp;
-    
+
+    /**
+     * Instantiates a new Game state.
+     *
+     * @param model the model
+     */
     public GameState(ScrabbleModel model) {
         if (model == null) {
             throw new IllegalArgumentException("ScrabbleModel cannot be null");
@@ -69,11 +74,40 @@ public class GameState implements Serializable {
         
         return playerCopies;
     }
-    
+
+    /**
+     * Get board state char [ ] [ ].
+     *
+     * @return the char [ ] [ ]
+     */
     public char[][] getBoardState() { return boardState; }
+
+    /**
+     * Gets players.
+     *
+     * @return the players
+     */
     public List<Player> getPlayers() { return new ArrayList<>(players); }
+
+    /**
+     * Gets current player index.
+     *
+     * @return the current player index
+     */
     public int getCurrentPlayerIndex() { return currentPlayerIndex; }
+
+    /**
+     * Gets consecutive passes.
+     *
+     * @return the consecutive passes
+     */
     public int getConsecutivePasses() { return consecutivePasses; }
+
+    /**
+     * Gets timestamp.
+     *
+     * @return the timestamp
+     */
     public long getTimestamp() { return timestamp; }
     
     @Override

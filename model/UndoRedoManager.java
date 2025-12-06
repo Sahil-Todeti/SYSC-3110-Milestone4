@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Manages undo/redo functionality using two stacks.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -13,14 +13,19 @@ public class UndoRedoManager {
     private LinkedList<GameState> undoStack;
     private LinkedList<GameState> redoStack;
     private static final int MAX_HISTORY = 100;
-    
+
+    /**
+     * Instantiates a new Undo redo manager.
+     */
     public UndoRedoManager() {
         this.undoStack = new LinkedList<>();
         this.redoStack = new LinkedList<>();
     }
-    
+
     /**
      * Saves current state to undo stack.
+     *
+     * @param state the state
      */
     public void saveState(GameState state) {
         if (state == null) return;
@@ -32,9 +37,12 @@ public class UndoRedoManager {
             undoStack.removeLast();
         }
     }
-    
+
     /**
      * Undoes last action.
+     *
+     * @param currentModel the current model
+     * @return the game state
      */
     public GameState undo(ScrabbleModel currentModel) {
         if (!canUndo()) return null;
@@ -46,9 +54,12 @@ public class UndoRedoManager {
         
         return undoStack.pop();
     }
-    
+
     /**
      * Redoes last undone action.
+     *
+     * @param currentModel the current model
+     * @return the game state
      */
     public GameState redo(ScrabbleModel currentModel) {
         if (!canRedo()) return null;
@@ -60,24 +71,47 @@ public class UndoRedoManager {
         
         return redoStack.pop();
     }
-    
+
+    /**
+     * Can undo boolean.
+     *
+     * @return the boolean
+     */
     public boolean canUndo() {
         return !undoStack.isEmpty();
     }
-    
+
+    /**
+     * Can redo boolean.
+     *
+     * @return the boolean
+     */
     public boolean canRedo() {
         return !redoStack.isEmpty();
     }
-    
+
+    /**
+     * Clear.
+     */
     public void clear() {
             undoStack.clear();
             redoStack.clear();
     }
-    
+
+    /**
+     * Gets undo depth.
+     *
+     * @return the undo depth
+     */
     public int getUndoDepth() {
         return undoStack.size();
     }
-    
+
+    /**
+     * Gets redo depth.
+     *
+     * @return the redo depth
+     */
     public int getRedoDepth() {
         return redoStack.size();
     }

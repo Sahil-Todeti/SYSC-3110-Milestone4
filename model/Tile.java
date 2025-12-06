@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Represents a single Scrabble tile with a letter and point value.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -16,6 +16,11 @@ public class Tile implements Serializable {
     private final int value;
     private final boolean blank;
 
+    /**
+     * Instantiates a new Tile.
+     *
+     * @param letter the letter
+     */
     public Tile(char letter) {
         this.letter = Character.toUpperCase(letter);
         this.blank = false;
@@ -28,6 +33,11 @@ public class Tile implements Serializable {
         this.blank = blank;
     }
 
+    /**
+     * Create blank tile.
+     *
+     * @return the tile
+     */
     public static Tile createBlank() {
         return new Tile('_', 0, true);
     }
@@ -54,8 +64,25 @@ public class Tile implements Serializable {
         }
     }
 
+    /**
+     * Gets letter.
+     *
+     * @return the letter
+     */
     public char getLetter() { return letter; }
+
+    /**
+     * Gets value.
+     *
+     * @return the value
+     */
     public int getValue() { return value; }
+
+    /**
+     * Is blank boolean.
+     *
+     * @return the boolean
+     */
     public boolean isBlank() { return blank; }
 
     @Override
@@ -75,6 +102,11 @@ public class Tile implements Serializable {
         return (letter + "" + blank).hashCode();
     }
 
+    /**
+     * To simple string string.
+     *
+     * @return the string
+     */
     public String toSimpleString() {
         return String.valueOf(letter);
     }

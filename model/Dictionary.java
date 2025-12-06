@@ -5,7 +5,7 @@ import java.util.*;
 
 /**
  * Loads and manages valid Scrabble words from a dictionary file.
- * 
+ *
  * @author Ashfaqul Alam
  * @version Milestone 4
  */
@@ -15,6 +15,11 @@ public class Dictionary implements Serializable {
     
     private final Set<String> validWords;
 
+    /**
+     * Instantiates a new Dictionary.
+     *
+     * @param filePath the file path
+     */
     public Dictionary(String filePath) {
         validWords = new HashSet<>();
         loadDictionary(filePath);
@@ -34,19 +39,41 @@ public class Dictionary implements Serializable {
         }
     }
 
+    /**
+     * Is valid boolean.
+     *
+     * @param word the word
+     * @return the boolean
+     */
     public boolean isValid(String word) {
         if (word == null) return false;
         return validWords.contains(word.toUpperCase());
     }
-    
+
+    /**
+     * Is valid word boolean.
+     *
+     * @param word the word
+     * @return the boolean
+     */
     public boolean isValidWord(String word) {
         return isValid(word);
     }
 
+    /**
+     * Size int.
+     *
+     * @return the int
+     */
     public int size() {
         return validWords.size();
     }
 
+    /**
+     * Is empty boolean.
+     *
+     * @return the boolean
+     */
     public boolean isEmpty() {
         return validWords.isEmpty();
     }
